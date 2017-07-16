@@ -4,12 +4,6 @@ jobs:
     docker:
       # specify the version you desire here
        - image: circleci/ruby:2.4.1-node
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
     working_directory: ~/repo
 
     steps:
@@ -35,7 +29,12 @@ jobs:
       # Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
-
+  test:
+    docker:
+      # specify the version you desire here
+       - image: circleci/ruby:2.4.1-node
+    working_directory: ~/repo
+    steps:
       # run tests!
       - run:
           name: run tests
@@ -56,3 +55,5 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+# workflows:
+#   version: 2
