@@ -1,4 +1,4 @@
-defaults: &defaults
+ruby_machine: &ruby_machine
   docker:
     - image: circleci/ruby:2.4.1-node
   working_directory: ~/repo
@@ -6,7 +6,7 @@ defaults: &defaults
 version: 2
 jobs:
   build:
-    <<: *defaults
+    <<: *ruby_machine
     steps:
       - checkout
       # Download and cache dependencies
@@ -29,8 +29,9 @@ jobs:
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
   ruby_test:
-    <<: *defaults
+    <<: *ruby_machine
     steps:
+      - checkout
       # run tests!
       - run:
           name: run tests
