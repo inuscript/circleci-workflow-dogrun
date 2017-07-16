@@ -32,6 +32,8 @@ jobs:
     <<: *ruby_machine
     steps:
       - checkout
+      - run:
+        command: circleci tests glob "**/*.rb" | circleci tests split
       # run tests!
       - restore_cache:
           keys:
