@@ -28,7 +28,7 @@ jobs:
       # Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
-  test:
+  ruby_test:
     <<: *defaults
     steps:
       # run tests!
@@ -56,6 +56,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test
+      - ruby_test:
           requires:
             - build
