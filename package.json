@@ -1,5 +1,10 @@
 {
   "name": "circleci-workflow-dogrun",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/inuscript/circleci-workflow-dogrun.git",
+  "author": "inuscript <inuscript@gmail.com>",
+  "license": "MIT"
 }
