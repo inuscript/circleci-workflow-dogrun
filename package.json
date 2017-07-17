@@ -1,7 +1,12 @@
 {
   "name": "circleci-workflow-dogrun",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "eslint": "^4.2.0",
+    "mocha": "^3.4.2",
+    "typescript": "^2.4.1",
+    "webpack": "^3.3.0"
+  },
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/inuscript/circleci-workflow-dogrun.git",
